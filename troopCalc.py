@@ -17,18 +17,19 @@ countLookup = {
     
     'MELEE-S-9' : 226,
     'MOUNT-S-9' : 112,
-    'FLY-S-9' : 10,
     'RANGE-S-9' : 220,
+    'FLY-S-9' : 10,
     
     'MELEE-G-8' : 360,
     'MOUNT-G-8' : 175,
-    'FLY-G-8' : 18,
     'RANGE-G-8' : 345,
+    'FLY-G-8' : 17,
 
     'MELEE-G-9' : 185,
     'MOUNT-G-9' : 90,
-    'FLY-G-9' : 8,
-    'RANGE-G-9' : 175
+    'RANGE-G-9' : 175,
+    'FLY-G-9' : 8
+    
 }
 
 kill_1 = 'MELEE'
