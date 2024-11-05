@@ -15,7 +15,7 @@ countLookup = {
     'RANGE-S-8' : 420,
     'FLY-S-8' : 20,
     
-    'MELEE-S-9' : 226,
+    'MELEE-S-9' : 225,
     'MOUNT-S-9' : 112,
     'RANGE-S-9' : 220,
     'FLY-S-9' : 10,
