@@ -12,20 +12,23 @@ statLookup = {
 countLookup = {
     'MELEE-S-8' : 440,
     'MOUNT-S-8' : 215,
+    'RANGE-S-8' : 420,
     'FLY-S-8' : 20,
-    'RANGE-S-8' : 295,
-    'MELEE-S-9' : 220,
-    'MOUNT-S-9' : 110,
-    'FLY-S-9' : 11,
-    'RANGE-S-9' : 210,
-    'MELEE-G-8' : 390,
-    'MOUNT-G-8' : 195,
+    
+    'MELEE-S-9' : 226,
+    'MOUNT-S-9' : 112,
+    'FLY-S-9' : 10,
+    'RANGE-S-9' : 220,
+    
+    'MELEE-G-8' : 360,
+    'MOUNT-G-8' : 175,
     'FLY-G-8' : 18,
-    'RANGE-G-8' : 380,
-    'MELEE-G-9' : 200,
-    'MOUNT-G-9' : 100,
-    'FLY-G-9' : 9,
-    'RANGE-G-9' : 200
+    'RANGE-G-8' : 345,
+
+    'MELEE-G-9' : 185,
+    'MOUNT-G-9' : 90,
+    'FLY-G-9' : 8,
+    'RANGE-G-9' : 175
 }
 
 kill_1 = 'MELEE'
@@ -33,4 +36,8 @@ kill_2 = 'FLY'
 kill_3 = 'MOUNT'
 kill_4 = 'RANGE'
 
-print(statLookup['MELEE-G-9'][0])
+factor = 300
+for key,value in countLookup.items():
+    count = value*factor
+    print(key + ":" + str(count))
+
