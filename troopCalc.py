@@ -37,7 +37,8 @@ kill_2 = 'FLY'
 kill_3 = 'MOUNT'
 kill_4 = 'RANGE'
 
-factor = 300
+# for a 250 multiplier I did 170 M9 and 350 M8 and up to 500 M7
+factor = 275
 for key,value in countLookup.items():
     count = value*factor
     print(key + ":" + str(count))
