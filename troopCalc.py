@@ -10,10 +10,10 @@ statLookup = {
 }
 
 countLookup = {
-    'MELEE-S-8' : 440,
-    'MOUNT-S-8' : 215,
-    'RANGE-S-8' : 420,
-    'FLY-S-8' : 20,
+    'MELEE-S-8' : 460,
+    'MOUNT-S-8' : 225,
+    'RANGE-S-8' : 440,
+    'FLY-S-8' : 21,
     
     'MELEE-S-9' : 225,
     'MOUNT-S-9' : 112,
@@ -38,7 +38,10 @@ kill_3 = 'MOUNT'
 kill_4 = 'RANGE'
 
 # for a 250 multiplier I did 170 M9 and 350 M8 and up to 500 M7
-factor = 275
+# 250 for shadow city with herc/beo/cleo
+factor = 250 
+
+# factor = 180 for swarm with herc/beo/cleo 120 m9, 250 m8, 400 m7
 for key,value in countLookup.items():
     count = value*factor
     print(key + ":" + str(count))
