@@ -2,7 +2,6 @@ import math
 import sys
 import os
 
-print("--------------TROOP CALCULATOR-----------------------")
 print("TOTAL LEADERSHIP:"+sys.argv[1])
 print("-----------------------------------------------------")
 leadership = int(sys.argv[1])
