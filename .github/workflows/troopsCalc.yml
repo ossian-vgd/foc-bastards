@@ -16,6 +16,11 @@ on:
         leadership:
            description: 'Total leadership of your attack'
            required: true
+        battle-plan:
+           type: choice
+           description: 'The kill order from left to right'
+           options:
+           - S8:S9:G8:G9:MELEE:MOUNT:RANGE:FLY
            
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
