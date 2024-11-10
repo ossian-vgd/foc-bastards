@@ -1,6 +1,9 @@
-print("--------------TROOP CALCULATOR-----------------------")
+import math
+import sys
 
-leadership = 248000
+print("--------------TROOP CALCULATOR-----------------------")
+print(sys.argv[1])
+leadership = int(sys.argv[1])
 dominance = 40000
 
 # the lookup is strength, health, leadership
@@ -35,8 +38,11 @@ countLookup = {
     'FLY-G-9' : [8,20]
 }
 
+battleLookup = {}
+battleLookup['S8:S9:G8:G9:MELEE:MOUNT:RANGE:FLY'] = countLookup 
+
 totalVal = 0
-for key,value in countLookup.items():
+for key,value in battleLookup['S8:S9:G8:G9:MELEE:MOUNT:RANGE:FLY'].items():
     totalVal += value[0]*value[1]
 
 percentLookup = {}
@@ -56,9 +62,6 @@ for key,value in percentLookup.items():
     print(key + ":" + str(round(count)))
 
 #--------------Print out monster count ------------------
-flierhealth = statLookup['FLY-G-9'][1]
-fliercount = finalCountLookup['FLY-G-9']
-monsterhealth = statLookup['MELEE-M-9'][1]
-monsterCount = (statLookup['FLY-G-9'][1]*finalCountLookup['FLY-G-9'])/statLookup['MELEE-M-9'][1]
-print( "Monster M9 count:" + str(monsterCount))
+monsterCount = (0.9*statLookup['FLY-G-9'][1]*finalCountLookup['FLY-G-9'])/statLookup['MELEE-M-9'][1]
+print( "Monster M9 count:" + str(math.floor(monsterCount)))
 
