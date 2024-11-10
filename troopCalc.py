@@ -3,7 +3,8 @@ import sys
 import os
 
 print("--------------TROOP CALCULATOR-----------------------")
-print(sys.argv[1])
+print("TOTAL LEADERSHIP:"+sys.argv[1])
+print("-----------------------------------------------------")
 leadership = int(sys.argv[1])
 dominance = 40000
 
