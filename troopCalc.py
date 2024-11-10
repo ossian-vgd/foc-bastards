@@ -7,6 +7,11 @@ print(sys.argv[1])
 leadership = int(sys.argv[1])
 dominance = 40000
 
+if "GITHUB_STEP_SUMMARY" in os.environ:
+ def print_to_summary(message):
+    with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+        f.write(message + '\n')
+
 # the lookup is strength, health, leadership
 statLookup = {
     'MELEE-G-9' : (5510,16530,1),
@@ -50,29 +55,18 @@ percentLookup = {}
 for key,value in countLookup.items():
     percentLookup[key] = (value[0]*value[1])/totalVal
 
-
-kill_1 = 'MELEE'
-kill_2 = 'FLY'
-kill_3 = 'MOUNT'
-kill_4 = 'RANGE'
-
-if "GITHUB_STEP_SUMMARY" in os.environ:
- def print_to_summary(message):
-    with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
-        f.write(message + '\n')
-
 finalCountLookup = {}
 for key,value in percentLookup.items():
     count = (leadership*value)/countLookup[key][1]
     finalCountLookup[key] = count
     msg = key + ":" + str(round(count)) 
     print(msg)
-    if "GITHUB_STEP_SUMMARY" in os.environ:
-      print_to_summary(msg)
+#    if "GITHUB_STEP_SUMMARY" in os.environ:
+#      print_to_summary(msg)
 
 #--------------Print out monster count ------------------
 monsterCount = (0.9*statLookup['FLY-G-9'][1]*finalCountLookup['FLY-G-9'])/statLookup['MELEE-M-9'][1]
 msg = "Monster M9 count:" + str(math.floor(monsterCount))
 print(msg)
-if "GITHUB_STEP_SUMMARY" in os.environ:
-  print_to_summary(msg)
+#if "GITHUB_STEP_SUMMARY" in os.environ:
+#  print_to_summary(msg)
