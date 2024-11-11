@@ -62,7 +62,7 @@ def calcResults(leadval):
     count = (leadval*value)/countLookup[key][1]
     finalCountLookup[key] = count
     msg += key + ":" + str(round(count)) + "<br>" 
-    print(msg)
+  #   print(msg)
   #    if "GITHUB_STEP_SUMMARY" in os.environ:
   #      print_to_summary(msg)
 
