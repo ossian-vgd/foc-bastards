@@ -21,6 +21,7 @@ on:
            description: 'The kill order from left to right'
            options:
            - S8:S9:G8:G9:MELEE:MOUNT:RANGE:FLY
+           - S8:S9:G8:G9:MELEE:FLY:MOUNT:RANGE
            
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -41,4 +42,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          python troopCalc.py ${{ github.event.inputs.leadership }} >> $GITHUB_STEP_SUMMARY
+          python troopCalc.py ${{ github.event.inputs.leadership }} ${{ github.event.inputs.battle-plan }} >> $GITHUB_STEP_SUMMARY
