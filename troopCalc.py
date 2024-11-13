@@ -15,13 +15,25 @@ def calcResultsv2(leadval, battleplan):
   # the lookup is strength, health, leadership
   statLookup = {
     'MELEE-G9' : (5510,16530,1),
+    'RANGE-G9' : (5510,16530,1),
+    'MOUNT-G9' : (11020,33060,2),
     'FLY-G9'   : (110200,330600,20),
+    'MELEE-S9' : (5510,16530,1),
+    'RANGE-S9' : (5510,16530,1),
+    'MOUNT-S9' : (11020,33060,2),
+    'FLY-S9'   : (110200,330600,20),
     'MELEE-G8' : (3060,9180,1),
+    'RANGE-G8' : (3060,9180,1),
+    'MOUNT-G8' : (6120,18360,2),
+    'FLY-G8'   : (61200,183600,20),
+    'MELEE-S8' : (3060,9180,1),
+    'RANGE-S8' : (3060,9180,1),
+    'MOUNT-S8' : (6120,18360,2),
+    'FLY-S8'   : (61200,183600,20),
     'MELEE-M9' : (1210000,3630000,55)
   }
 
-  # This lookup table has kill order from top to bottom
-  # The values are number of troops, leadership
+  # BattlePlan (BP1) - S8:S9:G8:G9/Melee:Mount:Range:Fly
   countLookup_BP1 = {
     'MELEE-S8' : [470,1],
     'MOUNT-S8' : [230,2],
@@ -44,6 +56,7 @@ def calcResultsv2(leadval, battleplan):
     'FLY-G9'   : [8,20]
   }
 
+  # BattlePlan (BP2) - S8:S9:G8:G9/Melee:Fly:Mount:Range
   countLookup_BP2 = {
     'MELEE-S8' : [470,1],
     'FLY-S8'   : [22,20],
@@ -81,17 +94,24 @@ def calcResultsv2(leadval, battleplan):
 #    print("Percent:"+key+":"+str(percentLookup[key]))
 
   finalCountLookup = {}
+  maxTroopHealth = 0
+  minTroopHealth = 100000000000
   msg = "<table border=\"1\" style=\"width:25%\"><tr><th align=\"left\">Troop Type</th><th align=\"left\">Count</th></tr>"
   for key,value in percentLookup.items():
     count = (leadval*value)/battleLookup[selectbattleplan][key][1]
     finalCountLookup[key] = count
+    maxTroopHealth = max(count*statLookup[key][1],maxTroopHealth)
+    minTroopHealth = min(count*statLookup[key][1],minTroopHealth)
 #    print("Leadval:"+str(leadval)+"value:"+str(value)+"count:"+str(battleLookup[selectbattleplan][key][1])+"finalcount:"+str(count))
     msg += "<tr><td>"+key + "</td><td>" + str(round(count)) + "</td></tr>"
 
   #--------------Print out monster count ------------------
-  monsterCount = (0.9*statLookup['FLY-G9'][1]*finalCountLookup['FLY-G9'])/statLookup['MELEE-M9'][1]
-  msg += "<tr><td>M9</td><td>" + str(math.floor(monsterCount)) + "</td></tr></table>"
+  monsterCount = (0.9*minTroopHealth)/statLookup['MELEE-M9'][1]
+  msg += "<tr><td>M9 - Follow Guards</td><td>" + str(math.floor(monsterCount)) + "</td></tr>"
+  monsterCount = (1.1*maxTroopHealth)/statLookup['MELEE-M9'][1]
+  msg += "<tr><td>M9 - Ahead of Guards</td><td>" + str(math.floor(monsterCount)) + "</td></tr></table>"
+
   return msg
 
-retVal = calcResults(leadership,battleplan)
+retVal = calcResultsv2(leadership,battleplan)
 print(retVal)
