@@ -102,10 +102,35 @@ def calcResultsv2(leadval, battleplan):
     'RANGE-G9' : [150,1]
   }
 
+  # BattlePlan (BP4) - Skadi G7:G8:G9:S9/Melee:Fly:Mount:Range
+  countLookup_BP4 = {
+    'MELEE-G7' : [29600,1],
+    'FLY-G7'   : [1410,20],
+    'MOUNT-G7' : [14250,2],
+    'RANGE-G7' : [28388,1],
+
+    'MELEE-G8' : [15680,1],
+    'FLY-G8'   : [764,20],
+    'MOUNT-G8' : [7590,2],
+    'RANGE-G8' : [15080,1],
+    
+    'MELEE-G9' : [6930,1],
+    'FLY-G9'   : [327,20],
+    'MOUNT-G9' : [3220,2],
+    'RANGE-G9' : [6340,1],
+
+    'MELEE-S9' : [9170,1],
+    'FLY-S9'   : [424,20],
+    'MOUNT-S9' : [4190,2],
+    'RANGE-S9' : [8280,1]
+
+  }
+  
   battleLookup = {}
   battleLookup['S8:S9:G8:G9:MELEE:MOUNT:RANGE:FLY'] = countLookup_BP1
   battleLookup['S8:S9:G8:G9:MELEE:FLY:MOUNT:RANGE'] = countLookup_BP2
   battleLookup['S8:G8:S9:G9:MELEE:FLY:MOUNT:RANGE'] = countLookup_BP3 
+  battleLookup['Skadi:G7:G8:G9:S9:MELEE:FLY:MOUNT:RANGE'] = countLookup_BP4
 
   totalVal = 0
   for key,value in battleLookup[selectbattleplan].items():
