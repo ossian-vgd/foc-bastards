@@ -22,6 +22,10 @@ def calcResultsv2(leadval, battleplan):
     'RANGE-S9' : (5510,16530,1),
     'MOUNT-S9' : (11020,33060,2),
     'FLY-S9'   : (110200,330600,20),
+    'MELEE-G7' : (1700,5100,1),
+    'RANGE-G7' : (1700,5100,1),
+    'MOUNT-G7' : (3400,10200,2),
+    'FLY-G7'   : (34000,102000,20),
     'MELEE-G8' : (3060,9180,1),
     'RANGE-G8' : (3060,9180,1),
     'MOUNT-G8' : (6120,18360,2),
@@ -44,7 +48,7 @@ def calcResultsv2(leadval, battleplan):
     'MOUNT-S9' : [112,2],
     'RANGE-S9' : [220,1],
     'FLY-S9'   : [10,20],
-
+    
     'MELEE-G8' : [360,1],
     'MOUNT-G8' : [175,2],
     'RANGE-G8' : [345,1],
