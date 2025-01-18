@@ -130,7 +130,7 @@ def calcResultsv2(leadval, battleplan):
   battleLookup['S8:S9:G8:G9:MELEE:MOUNT:RANGE:FLY'] = countLookup_BP1
   battleLookup['S8:S9:G8:G9:MELEE:FLY:MOUNT:RANGE'] = countLookup_BP2
   battleLookup['S8:G8:S9:G9:MELEE:FLY:MOUNT:RANGE'] = countLookup_BP3 
-  battleLookup['Skadi:G7:G8:G9:S9:MELEE:FLY:MOUNT:RANGE'] = countLookup_BP4
+  battleLookup['SKADI:G7:G8:G9:S9:MELEE:FLY:MOUNT:RANGE'] = countLookup_BP4
 
   totalVal = 0
   for key,value in battleLookup[selectbattleplan].items():
