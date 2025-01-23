@@ -133,25 +133,25 @@ def calcResultsv2(leadval, battleplan):
 # BattlePlan (BP5) - (Swarm/Beo/Cleo/Herc) S8:S9:G8:G9/Melee:Fly:Mount:Range
 # M8 - 220, M9 - 100, M7 - 440, M6 - trash bucket
   countLookup_BP5 = {
-    'MELEE-S8' : [79527,1],
+    'MELEE-S8' : [80315,1],
     'FLY-S8'   : [3723,20],
     'MOUNT-S8' : [37248,2],
     'RANGE-S8' : [72759,1],
 
     'MELEE-S9' : [38918,1],
     'FLY-S9'   : [1700,20],
-    'MOUNT-S9' : [33700,2],
-    'RANGE-S9' : [16800,1],
+    'MOUNT-S9' : [16906,2],
+    'RANGE-S9' : [33500,1],
 
     'MELEE-G8' : [56500,1],
-    'FLY-G8'   : [2800,20],
-    'MOUNT-G8' : [28427,2],
-    'RANGE-G8' : [56346,1],
+    'FLY-G8'   : [2820,20],
+    'MOUNT-G8' : [28100,2],
+    'RANGE-G8' : [56100,1],
 
     'MELEE-G9' : [30457,1],
     'FLY-G9'   : [1354,20],
     'MOUNT-G9' : [13367,2],
-    'RANGE-G9' : [25381,1]
+    'RANGE-G9' : [26400,1]
   }
   
   battleLookup = {}
@@ -159,6 +159,7 @@ def calcResultsv2(leadval, battleplan):
   battleLookup['S8:S9:G8:G9:MELEE:FLY:MOUNT:RANGE'] = countLookup_BP2
   battleLookup['S8:G8:S9:G9:MELEE:FLY:MOUNT:RANGE'] = countLookup_BP3 
   battleLookup['SKADI:G7:G8:G9:S9:MELEE:FLY:MOUNT:RANGE'] = countLookup_BP4
+  battleLookup['SWARM:HERC/CLEO/BEO'] = countLookup_BP5
 
   totalVal = 0
   for key,value in battleLookup[selectbattleplan].items():
