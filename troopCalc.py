@@ -131,7 +131,7 @@ def calcResultsv2(leadval, battleplan):
   }
 
 # BattlePlan (BP5) - (Swarm/Beo/Cleo/Herc) S8:S9:G8:G9/Melee:Fly:Mount:Range
-# M8 - 220, M9 - 100, M7 - 440, M6 - trash bucket
+# To run at end M8 - 200, M9 - 100, M7 - 400, M6 - trash bucket
   countLookup_BP5 = {
     'MELEE-S8' : [80315,1],
     'FLY-S8'   : [3723,20],
